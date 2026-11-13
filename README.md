@@ -37,5 +37,5 @@ El paso siguiente es reemplazar los nombres por un modelo de Machine Learning: v
 
 | Rama | Para qué |
 |---|---|
-| `main` | Código con comentarios mínimos (el que se escribe en clase) |
-| `alumnos` | El mismo código comentado paso a paso, para estudiar |
+| `main` | El código comentado paso a paso, para estudiar |
+| `clase` | El mismo código con comentarios mínimos (el que se escribe en clase) |
