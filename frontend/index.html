@@ -1,16 +1,33 @@
 <!DOCTYPE html>
+<!-- ==================================================================
+     index.html · LA ESTRUCTURA DE LA PÁGINA (el frontend)
+     ------------------------------------------------------------------
+     Solo define QUÉ hay en la página: un formulario con un campo,
+     un botón y un lugar para mostrar el mensaje de respuesta.
+     El aspecto está en styles.css y el comportamiento en los dos .js.
+     Esta página NO guarda nada: le manda el nombre a la API.
+     Se abre con Live Server (clic derecho → "Open with Live Server").
+     ================================================================== -->
 <html lang="es">
 <head>
+  <!-- Para que los acentos y la ñ se vean bien -->
   <meta charset="UTF-8">
+  <!-- Para que la página se adapte a la pantalla del celular -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Saludo</title>
+  <!-- Conecta la hoja de estilos -->
   <link rel="stylesheet" href="styles.css">
+  <!-- Los dos scripts. "defer" = ejecutarlos recién cuando toda la página está cargada.
+       El orden importa: primero cliente.js, porque script.js usa su función enviarNombre(). -->
   <script src="cliente.js" defer></script>
   <script src="script.js" defer></script>
 </head>
 <body>
   <main class="saludo">
     <h1>¡Hola!</h1>
+    <!-- El formulario. script.js lo busca por su id="saludo-form".
+         El <input> tiene id="nombre": así script.js lee lo que se escribió.
+         required → el navegador no deja enviarlo vacío. -->
     <form id="saludo-form">
       <label for="nombre">¿Cómo te llamas?</label>
       <div class="formulario">
@@ -18,6 +35,8 @@
         <button type="submit">Enviar</button>
       </div>
     </form>
+    <!-- Acá script.js escribe la respuesta de la API.
+         role="status" y aria-live hacen que un lector de pantalla anuncie el mensaje. -->
     <p id="mensaje" role="status" aria-live="polite"></p>
   </main>
 </body>
